@@ -61,7 +61,6 @@ def write_index():
 # Returns:      String - cleantext
 def clean_html(page_contents):
     # function to clean html
-    ##### your code here ######
     #No JavaScript
     cleantext = re.sub('<script[\s\S]+?/script>', '', page_contents)
     #No CSS
@@ -94,7 +93,6 @@ def clean_html(page_contents):
     #No Punctuation
     cleantext = re.sub('([\W]+)', ' ', cleantext)
     return cleantext
-    ##### your code end  ######
 
 # Function:     make_index(url, page_contents)
 # Parameters:   String - url (the url of the page being scraped by PCcrawler.py
@@ -123,8 +121,7 @@ def make_index(url, page_contents):
     # Send the contents of the scraped page to be cleaned, store output in page_text
     page_text = clean_html(page_contents)
 
-    #### your code here ####
-    # All the subsequent code occurs at each URL, therefore important not to overwrite
+    # This code runs for each URL, therefore important not to overwrite
     # existing data.
 
     # Store the URLs that are scraped in the docids file
@@ -158,7 +155,6 @@ def make_index(url, page_contents):
             # append that the occurrence of that token to the correct tokenID
             # entry in postings, with the relevant url source
             postings[tokenID].append([docids.index(url), tokens.count(token)])
-    #### end of your code ####
     return
 
 # Standard boilerplate to call the main() function to begin
