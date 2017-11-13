@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d6cb09a-d3b5-4d87-9653-d00daa690f08" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docids_test.txt" afterPath="$PROJECT_DIR$/docids_test.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/postings_test.txt" afterPath="$PROJECT_DIR$/postings_test.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vocab_test.txt" afterPath="$PROJECT_DIR$/vocab_test.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/indexer.py" afterPath="$PROJECT_DIR$/indexer.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,8 +26,8 @@
       <file leaf-file-name="indexer.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/indexer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="42" column="29" lean-forward="true" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
+            <state relative-caret-position="1299">
+              <caret line="107" column="31" lean-forward="false" selection-start-line="107" selection-start-column="31" selection-end-line="107" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -414,8 +412,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/indexer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="42" column="29" lean-forward="true" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
+        <state relative-caret-position="1299">
+          <caret line="107" column="31" lean-forward="false" selection-start-line="107" selection-start-column="31" selection-end-line="107" selection-end-column="31" />
           <folding />
         </state>
       </provider>

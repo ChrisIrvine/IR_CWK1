@@ -52,7 +52,13 @@ def write_index():
 
     return
 
-
+# Function:     clean_html(page_contents)
+# Parameters:   String - page_contents (source code of scraped webpage)
+# Purpose:      Strips out all unwanted content from the raw page text of a
+#               Web Page. Removes HTML tag, internal tag content, numbers,
+#               abbreviations and punctuation through regex. Aims to preserve
+#               external tag content.
+# Returns:      String - cleantext
 def clean_html(page_contents):
     # function to clean html
     ##### your code here ######
@@ -90,7 +96,16 @@ def clean_html(page_contents):
     return cleantext
     ##### your code end  ######
 
-
+# Function:     make_index(url, page_contents)
+# Parameters:   String - url (the url of the page being scraped by PCcrawler.py
+#               String - page_content (source code of the scraped webpage)
+# Purpose:      Process the source code from a website, that is cleaned by
+#               clean_text(page_contents), and creates index tables for future
+#               retrieval.
+# Returns:      No inherit returns, but outputs content into:
+#                   - docids.txt
+#                   - postings.txt
+#                   - vocab.txt
 def make_index(url, page_contents):
     # declare refs to global variables
     global docids
