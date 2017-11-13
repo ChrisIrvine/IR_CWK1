@@ -64,18 +64,17 @@ def clean_html(page_contents):
     cleantext = re.sub('<!--[\s\S]+?-->', '', cleantext)
     #No noscript tags
     cleantext = re.sub('<noscript[\s\S]+?/noscript>', '', cleantext)
+    #No Links
+    cleantext = re.sub('<a[\s\S]+?>', '', cleantext)
     #No input content
     cleantext = re.sub('<\s*input[^>]+>', '', cleantext)
     #No span content
     cleantext = re.sub('<\s*span[^>]+>', '', cleantext)
+    #No Table Headers
+    cleantext = re.sub('<thead[\s\S]+?>', '', cleantext)
+    cleantext = re.sub('<th[\s\S]+?>', '', cleantext)
     #No HTML
     cleantext = re.sub('<.*?>', ' ', cleantext)
-    #No href
-    cleantext = re.sub('href', '', cleantext)
-    #No Dates
-    cleantext = re.sub('(\d{2}-\w{3}-\d{4}\s\d{2}:\d{2})', '', cleantext)
-    #No Links
-    cleantext = re.sub('(lg\d{3}.html)', '', cleantext)
     #No Numbers
     cleantext = re.sub('(\d)', '', cleantext)
     #No HTML Special Characters
@@ -100,7 +99,7 @@ def make_index(url, page_contents):
 
     # first convert bytes to string if necessary
     if isinstance(page_contents, bytes):
-        page_contents = page_contents.decode('utf-8')
+        page_contents = page_contents.decode('utf-8', 'ignore')
 
     print('===============================================')
     print('make_index: url = ', url)
@@ -112,7 +111,7 @@ def make_index(url, page_contents):
     #### your code here ####
     # All the subsequent code occurs at each URL, therefore important not to overwrite
     # existing data.
-    
+
     # Store the URLs that are scraped in the docids file
     docids.append(url)
     # Using list comprehension, create the tokens list:
@@ -128,7 +127,8 @@ def make_index(url, page_contents):
     #   - add token into vocab
     # - else
     #   - move onto next token
-    vocab.extend([t for t in tokens if t not in vocab])
+    # - check the token length is greater than 1
+    vocab.extend([t for t in tokens if t not in vocab if len(t)>1])
 
     # for each token in vocabulary, get the tokenID (using enumerate)
     for tokenID, token in enumerate(vocab):
