@@ -38,9 +38,9 @@ def write_index():
     global vocab
 
     # writes to index files: docids, vocab, postings
-    outlist1 = open('docids_test.txt', 'w')
-    outlist2 = open('vocab_test.txt', 'w')
-    outlist3 = open('postings_test.txt', 'w')
+    outlist1 = open('docids.txt', 'w')
+    outlist2 = open('vocab.txt', 'w')
+    outlist3 = open('postings.txt', 'w')
 
     json.dump(docids, outlist1)
     json.dump(vocab, outlist2)
